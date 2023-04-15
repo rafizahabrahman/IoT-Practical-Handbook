@@ -128,8 +128,7 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo native USB port only
   }
-  WiFi.mode(WIFI_STA); 
-  pinMode(LED, OUTPUT);   
+  WiFi.mode(WIFI_STA);   
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass); //Initialized Blynk
   dht.begin();  // Initialized DHT11 sensor
   ThingSpeak.begin(client);  // Initialize ThingSpeak
