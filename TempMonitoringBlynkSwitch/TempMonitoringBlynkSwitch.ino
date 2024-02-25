@@ -83,7 +83,7 @@ void sendSensor(){
   }
   delay(20000); // Wait 20 seconds to update the channel again
 
-// Sending data to Blynk IoT
+  // Sending data to Blynk IoT
   // You can send any value at any time.
   // Please don't send more that 10 values per second.
   Blynk.virtualWrite(V0, Temperature);  // V0 correspond to the Virtual pin for Temperature datastream set on Blynk2.0
