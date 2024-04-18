@@ -1,5 +1,5 @@
 **IFTTT Update**
-Starting early February 2024, IFTTT no longer support webhook for non paid (free) account) so push notifcation tutorial using IFTTT is no longer valid unless you got paid account.
+Starting early February 2024, IFTTT no longer support webhook for non paid (free) account so push notifcation tutorial using IFTTT is no longer valid unless you got paid account.
 Suggested that you look into events and notification setting using Blynk.Cloud. It is easy to setup, I will try to update the handbook as soon as possible.
 
 **Blynk Update**
