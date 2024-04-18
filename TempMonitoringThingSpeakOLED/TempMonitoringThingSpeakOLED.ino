@@ -7,7 +7,7 @@
 #include <ThingSpeak.h>
 
 //ThingSpeak Setup
-long myChannelNumber = youChannelID; // change to your own channel number
+long myChannelNumber = yourChannelID; // change to your own channel number
 const char myWriteAPIKey[] = "yourownAPIwriteKey";  // change to your own API Write Key
 
 //OLED Display Setup
