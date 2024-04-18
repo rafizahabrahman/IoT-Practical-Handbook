@@ -1,3 +1,8 @@
+/* Fill in information from Blynk Device Info here */
+#define BLYNK_TEMPLATE_ID "TMPL6b-30xqrI"   // change to your own template ID
+#define BLYNK_TEMPLATE_NAME "Temperature Monitoring"   // change to your own template name
+#define BLYNK_AUTH_TOKEN "0gVYxFAcv-074X82yK9c8x8ZE8gkn_64"  // change to your own Blynk_auth_token
+
 //DHT11 and NodeMCU with Blynk
 //----------------------------
 //Libraries used
@@ -10,10 +15,6 @@
 //Blynk Setup
 //------------
 #define BLYNK_PRINT Serial
-/* Fill in information from Blynk Device Info here */
-#define BLYNK_TEMPLATE_ID "TMPL6b-30xqrI"   // change to your own template ID
-#define BLYNK_TEMPLATE_NAME "Temperature Monitoring"   // change to your own template name
-#define BLYNK_AUTH_TOKEN "0gVYxFAcv-074X82yK9c8x8ZE8gkn_64"  // change to your own Blynk_auth_token
 BlynkTimer timer;
 
 int LED = D4;
