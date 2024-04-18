@@ -1,7 +1,8 @@
 /* Fill in information from Blynk Device Info here */
-#define BLYNK_TEMPLATE_ID "TMPL6b-30xqrI"   // change to your own template ID
-#define BLYNK_TEMPLATE_NAME "Temperature Monitoring"   // change to your own template name
-#define BLYNK_AUTH_TOKEN "0gVYxFAcv-074X82yK9c8x8ZE8gkn_64"  // change to your own Blynk_auth_token
+//You can copy Blynk Device Info from the web dashboard and overwrite line #3, #4 and #5
+#define BLYNK_TEMPLATE_ID "CHANGE TO YOUR OWN TEMPLATE ID"
+#define BLYNK_TEMPLATE_NAME "CHANGE TO YOUR OWN TEMPLATE NAME"
+#define BLYNK_AUTH_TOKEN "CHANGE TO YOUR OWN BLYNK_AUTH_TOKEN"
 
 //DHT11 and NodeMCU with Blynk
 //----------------------------
@@ -16,12 +17,11 @@
 //------------
 #define BLYNK_PRINT Serial
 BlynkTimer timer;
-
 int LED = D4;
 
 //ThingSpeak Setup
-long myChannelNumber = 2079878; // change to your own channel number
-const char myWriteAPIKey[] = "9SGWYN7TZ78N0NZJ";  // change to your own API Write Key
+long myChannelNumber = <CHANGE TO YOUR OWN CHANNEL ID>; // change to your own channel number
+const char myWriteAPIKey[] = "CHANGE TO YOUR OWN APIWRITE KEY";  // change to your own API Write Key
 
 //Temperature & Humidity Setup
 #define DHTTYPE DHT11 // DHT 11
@@ -36,8 +36,8 @@ float Temp_Fahrenheit;
 
 // Your WiFi credentials.
 // Set password to "" for open networks. 
-const char *ssid =  "myiot";  // change to your own SSID @ hotspot
-const char *pass =  "myiot2022";  // change to your own Password
+const char *ssid =  "yourownssid";  // change to your own SSID @ hotspot
+const char *pass =  "yourownpassword";  // change to your own Password
 WiFiClient client;
 
 BLYNK_WRITE(V2){    //// V2 correspond to the Virtual pin for LED datastream set on Blynk2.0
