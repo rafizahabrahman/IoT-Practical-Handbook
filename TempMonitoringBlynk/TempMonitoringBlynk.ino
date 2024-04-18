@@ -1,7 +1,8 @@
 /* Fill in information from Blynk Device Info here */
-#define BLYNK_TEMPLATE_ID "TMPL6b-30xqrI"
-#define BLYNK_TEMPLATE_NAME "Temperature Monitoring"
-#define BLYNK_AUTH_TOKEN "0gVYxFAcv-074X82yK9c8x8ZE8gkn_64"
+//You can copy Blynk Device Info from the web dashboard and overwrite line #3, #4 and #5
+#define BLYNK_TEMPLATE_ID "CHANGE TO YOUR OWN TEMPLATE ID"
+#define BLYNK_TEMPLATE_NAME "CHANGE TO YOUR OWN TEMPLATE NAME"
+#define BLYNK_AUTH_TOKEN "CHANGE TO YOUR OWN BLYNK_AUTH_TOKEN"
 
 //DHT11 and NodeMCU with Blynk
 //----------------------------
@@ -18,8 +19,8 @@
 BlynkTimer timer;
 
 //ThingSpeak Setup
-long myChannelNumber = 2079878; // change to your own channel number
-const char myWriteAPIKey[] = "9SGWYN7TZ78N0NZJ";  // change to your own API Write Key
+long myChannelNumber = <CHANGE TO YOUR OWN CHANNEL ID>; // change to your own channel number
+const char myWriteAPIKey[] = "CHANGE TO YOUR OWN APIWRITE KEY";  // change to your own API Write Key
 
 //Temperature & Humidity Setup
 #define DHTTYPE DHT11 // DHT 11
