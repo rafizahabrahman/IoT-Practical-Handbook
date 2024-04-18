@@ -3,4 +3,4 @@ Starting early February 2024, IFTTT no longer support webhook for non paid (free
 Suggested that you look into events and notification setting using Blynk.Cloud. It is easy to setup, I will try to update the handbook as soon as possible.
 
 **Blynk Update**
-The BLYNK_TEMPLATE_ID, BLYNK_TEMPLATE_NAME AND BLYNK_AUTH_TOKEN must be placed at the very top of the firmware code (Arduino Sketch) meaning that must be place before the line code of Blynk library.
+The BLYNK_TEMPLATE_ID, BLYNK_TEMPLATE_NAME AND BLYNK_AUTH_TOKEN must be placed at the very top of the firmware code (Arduino Sketch) meaning that it must be placed before the line code of Blynk library.
