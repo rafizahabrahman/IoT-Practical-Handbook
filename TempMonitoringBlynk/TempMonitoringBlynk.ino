@@ -9,8 +9,6 @@
 #include <ESP8266WiFi.h>
 #include <Wire.h>
 #include <DHT.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
 #include <ThingSpeak.h>
 #include <BlynkSimpleEsp8266.h>
 
@@ -22,12 +20,6 @@ BlynkTimer timer;
 //ThingSpeak Setup
 long myChannelNumber = 2079878; // change to your own channel number
 const char myWriteAPIKey[] = "9SGWYN7TZ78N0NZJ";  // change to your own API Write Key
-
-//OLED Display Setup
-#define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 32 // OLED display height, in pixels
-Adafruit_SSD1306 display = Adafruit_SSD1306(128, 64, &Wire, -1);
-unsigned long delayTime;
 
 //Temperature & Humidity Setup
 #define DHTTYPE DHT11 // DHT 11
@@ -46,37 +38,6 @@ const char *ssid =  "yourownssid";  // change to your own SSID @ hotspot
 const char *pass =  "yourssidpassword";  // change to your own Password
 WiFiClient client;
 
-void oledDisplay(){
-// display temperature to OLED Display
-  display.setCursor(0,0);
-  display.clearDisplay();
-  display.setTextSize(1.75);
-  display.setCursor(0,0);
-  display.print("Temp Monitoring");
-  display.setTextSize(1);
-  display.setCursor(0,16);
-  display.print("Temperature: ");
-  display.setTextSize(2);
-  display.setCursor(0,26);
-  display.print(Temperature);
-  display.print(" ");
-  display.setTextSize(1);
-  display.cp437(true);
-  display.write(167);
-  display.setTextSize(2);
-  display.print("C");
-  
-  // display humidity
-  display.setTextSize(1);
-  display.setCursor(0, 41);
-  display.print("Humidity: ");
-  display.setTextSize(2);
-  display.setCursor(0, 51);
-  display.print(Humidity);
-  display.print(" %"); 
-  display.display();
-  delay(1000);
-}
 void sendSensor(){
 //Sensor Readings
   Humidity = dht.readHumidity();
@@ -133,16 +94,7 @@ void setup() {
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass); //Initialized Blynk
   dht.begin();  // Initialized DHT11 sensor
   ThingSpeak.begin(client);  // Initialize ThingSpeak
-  // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize OLED Display with the I2C addr 0x3C (for the 128x64)
-   // init done
-  display.display();
-  delay(100);
-  display.clearDisplay();
-  display.display();
-  display.setTextSize(1.75);
-  display.setTextColor(WHITE);
-// Setup a function to be called every 1 seconds
+  // Setup a function to be called every 1 seconds
   timer.setInterval(1000L, sendSensor);
 }
  
@@ -161,6 +113,5 @@ void loop() {
 
   Blynk.run();
   timer.run();
-  oledDisplay();
 }
 
